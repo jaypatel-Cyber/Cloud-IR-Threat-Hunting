@@ -1,4 +1,4 @@
-# Project 4: Cloud Incident Response & Threat Hunting (AWS)
+# Cloud Incident Response & Threat Hunting (AWS)
 
 | Field      | Detail                                      |
 |------------|---------------------------------------------|
