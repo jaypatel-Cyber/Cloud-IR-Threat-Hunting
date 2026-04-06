@@ -1,0 +1,91 @@
+title: Cryptomining EC2 Instance Deployment (Resource Hijacking)
+id: 2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e
+status: experimental
+description: |
+  Detects EC2 instance launches consistent with cryptomining operations:
+  GPU/compute-optimized instance types (p3, p4, g4, c5), unusual regions
+  not previously used by the account, large instance counts, and suspicious
+  UserData payloads (base64-encoded shell scripts, curl to external URLs).
+  Commonly follows IAM role hijacking as part of the T1496 kill chain.
+references:
+  - https://attack.mitre.org/techniques/T1496/
+  - https://stratus-red-team.cloud/attack-techniques/AWS/aws.execution.ec2-launch-unusual-instances/
+  - https://permiso.io/blog/s/unmasking-guivil-new-cloud-threat-actor
+author: Jay Patel
+date: 2024/03/15
+modified: 2024/03/15
+tags:
+  - attack.impact
+  - attack.t1496
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  # Rule 1: Large GPU or compute-heavy instance type
+  gpu_instance_launch:
+    eventSource: ec2.amazonaws.com
+    eventName: RunInstances
+    requestParameters.instanceType|startswith:
+      - 'p2.'
+      - 'p3.'
+      - 'p4.'
+      - 'p5.'
+      - 'g3.'
+      - 'g4.'
+      - 'g5.'
+      - 'inf1.'
+      - 'trn1.'
+    errorCode: null  # successful launch only
+  # Rule 2: Multi-instance launch (count ≥ 3)
+  bulk_instance_launch:
+    eventSource: ec2.amazonaws.com
+    eventName: RunInstances
+    requestParameters.maxCount|gte: 3
+    errorCode: null
+  # Rule 3: Suspicious UserData (base64 shell scripts, miner keywords)
+  miner_userdata:
+    eventSource: ec2.amazonaws.com
+    eventName: RunInstances
+    requestParameters.userData|contains:
+      - 'xmrig'
+      - 'monero'
+      - 'minergate'
+      - 'cryptonight'
+      - 'ethminer'
+      - 'nbminer'
+  # Rule 4: RunInstances in unusual regions (customize for your org)
+  unusual_region:
+    eventSource: ec2.amazonaws.com
+    eventName: RunInstances
+    awsRegion:
+      - 'ap-southeast-1'
+      - 'ap-southeast-2'
+      - 'ap-east-1'
+      - 'af-south-1'
+      - 'me-south-1'
+    errorCode: null
+  # Rule 5: Open security group immediately after instance launch
+  open_security_group:
+    eventSource: ec2.amazonaws.com
+    eventName: AuthorizeSecurityGroupIngress
+    requestParameters.cidrIp: '0.0.0.0/0'
+  condition: >
+    (gpu_instance_launch and bulk_instance_launch)
+    or miner_userdata
+    or (gpu_instance_launch and unusual_region)
+    or (bulk_instance_launch and unusual_region)
+falsepositives:
+  - Legitimate ML/AI workloads using GPU instances
+  - Batch data processing jobs requiring large instance counts
+  - Multi-region deployments by DevOps teams
+level: high
+fields:
+  - eventTime
+  - sourceIPAddress
+  - userIdentity.userName
+  - awsRegion
+  - requestParameters.instanceType
+  - requestParameters.maxCount
+  - requestParameters.imageId
+  - requestParameters.userData
+  - responseElements.instancesSet

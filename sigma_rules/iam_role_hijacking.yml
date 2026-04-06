@@ -1,0 +1,79 @@
+title: IAM Role Hijacking and Persistent Backdoor Key Creation
+id: 9d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a
+status: experimental
+description: |
+  Detects the IAM credential abuse and lateral movement chain:
+  ListUsers/ListRoles (discovery) → AssumeRole (privilege escalation) →
+  CreateAccessKey (persistence). This pattern is characteristic of an
+  attacker who has obtained initial cloud credentials and is expanding
+  their access and establishing a persistent backdoor.
+references:
+  - https://attack.mitre.org/techniques/T1078/004/
+  - https://attack.mitre.org/techniques/T1098/001/
+  - https://attack.mitre.org/techniques/T1087/004/
+  - https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
+author: Jay Patel
+date: 2024/03/15
+modified: 2024/03/15
+tags:
+  - attack.privilege_escalation
+  - attack.t1078.004
+  - attack.persistence
+  - attack.t1098.001
+  - attack.discovery
+  - attack.t1087.004
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  # High-signal: AssumeRole into admin/privileged role
+  assume_privileged_role:
+    eventSource: sts.amazonaws.com
+    eventName: AssumeRole
+    requestParameters.roleArn|contains:
+      - 'admin'
+      - 'Admin'
+      - 'Administrator'
+      - 'ec2-admin'
+      - 'power-user'
+      - 'root'
+  # High-signal: New access key created (persistence mechanism)
+  backdoor_key:
+    eventSource: iam.amazonaws.com
+    eventName: CreateAccessKey
+    errorCode: null  # successful only
+  # Context: IAM enumeration preceding the above
+  iam_enumeration:
+    eventSource: iam.amazonaws.com
+    eventName:
+      - ListUsers
+      - ListRoles
+      - GetUser
+      - ListAccessKeys
+      - ListAttachedRolePolicies
+  # Privilege escalation via policy attachment
+  policy_attachment:
+    eventSource: iam.amazonaws.com
+    eventName:
+      - AttachRolePolicy
+      - PutUserPolicy
+      - PutRolePolicy
+      - AttachUserPolicy
+  condition: >
+    (assume_privileged_role and backdoor_key)
+    or (iam_enumeration | count() by sourceIPAddress > 3 within 10m)
+    or policy_attachment
+falsepositives:
+  - Terraform/CloudFormation provisioning new IAM roles during deployments
+  - Legitimate cross-account access patterns in multi-account organizations
+  - Security team break-glass procedures
+level: high
+fields:
+  - eventTime
+  - sourceIPAddress
+  - userIdentity.userName
+  - userIdentity.type
+  - eventName
+  - requestParameters.roleArn
+  - requestParameters.userName
+  - responseElements.accessKey.accessKeyId

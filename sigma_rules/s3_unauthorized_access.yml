@@ -1,0 +1,68 @@
+title: S3 Bucket Enumeration and Data Exfiltration
+id: 4a3c8f21-7b2d-4e9a-bc1f-d2e3f4a5b6c7
+status: experimental
+description: |
+  Detects rapid S3 API calls from a single source IP indicative of bucket
+  enumeration followed by unauthorized data access. Attacker pattern:
+  ListBuckets → GetBucketAcl (multiple buckets) → GetObject (mass download).
+  Associated with public bucket misconfiguration exploitation (T1530).
+references:
+  - https://attack.mitre.org/techniques/T1530/
+  - https://attack.mitre.org/techniques/T1580/
+  - https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudtrail-logging.html
+author: Jay Patel
+date: 2024/03/15
+modified: 2024/03/15
+tags:
+  - attack.collection
+  - attack.t1530
+  - attack.discovery
+  - attack.t1580
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  # Rule 1: Burst of enumeration API calls from one IP in 5 minutes
+  enumeration_burst:
+    eventSource: s3.amazonaws.com
+    eventName:
+      - ListBuckets
+      - ListObjects
+      - ListObjectsV2
+      - GetBucketAcl
+      - GetBucketPolicy
+      - GetBucketLocation
+  # Rule 2: Successful GetObject after prior AccessDenied errors from same IP
+  exfil_after_errors:
+    eventSource: s3.amazonaws.com
+    eventName: GetObject
+    errorCode: null  # successful
+  # Rule 3: Sensitive key patterns suggesting exposed internal data
+  sensitive_key_patterns:
+    eventSource: s3.amazonaws.com
+    eventName: GetObject
+    requestParameters.key|contains:
+      - '/internal/'
+      - '/hr/'
+      - '/finance/'
+      - '/salary'
+      - '/employee'
+      - 'db-config'
+      - '.env'
+      - 'credentials'
+  condition: >
+    (enumeration_burst | count() by sourceIPAddress > 5 within 5m)
+    or (exfil_after_errors and sensitive_key_patterns)
+falsepositives:
+  - Automated backup tools running rapid multi-bucket scans
+  - CI/CD pipelines syncing multiple S3 buckets
+  - S3 inventory jobs
+level: medium
+fields:
+  - eventTime
+  - sourceIPAddress
+  - userIdentity.userName
+  - eventName
+  - requestParameters.bucketName
+  - requestParameters.key
+  - errorCode

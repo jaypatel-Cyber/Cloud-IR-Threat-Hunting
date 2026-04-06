@@ -1,0 +1,64 @@
+version: "3.9"
+
+# Project 4: Cloud IR & Threat Hunting — Local AWS Simulation Stack
+# LocalStack simulates S3, IAM, EC2, CloudTrail, STS locally.
+# Jupyter Lab provides the interactive threat hunting notebook.
+
+services:
+
+  localstack:
+    image: localstack/localstack:3.4
+    container_name: cloud-ir-aws-sim
+    ports:
+      - "4566:4566"       # Unified AWS API gateway
+      - "4510-4559:4510-4559"
+    environment:
+      - SERVICES=s3,iam,ec2,cloudtrail,sts,logs,guardduty
+      - DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_REGION=us-east-1
+      - DEBUG=0
+      - PERSISTENCE=1
+    volumes:
+      - localstack-data:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - cloud-hunt-net
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:4566/_localstack/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  jupyter:
+    image: jupyter/scipy-notebook:python-3.11
+    container_name: cloud-ir-notebook
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=cloudhunt
+      # Point boto3 at LocalStack
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ENDPOINT_URL=http://localstack:4566
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./hunting:/home/jovyan/hunting
+      - ./sample_data:/home/jovyan/sample_data
+      - ./reports:/home/jovyan/reports
+    networks:
+      - cloud-hunt-net
+    depends_on:
+      localstack:
+        condition: service_healthy
+
+networks:
+  cloud-hunt-net:
+    driver: bridge
+    name: cloud-hunt-net
+
+volumes:
+  localstack-data:
+    driver: local

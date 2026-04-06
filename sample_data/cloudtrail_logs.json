@@ -1,0 +1,934 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T09:02:11Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-data", "key": "reports/weekly-summary.pdf"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60001",
+      "eventID": "e1a1b1c1-0001-4001-a001-000000000001",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T09:15:43Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-data", "key": "reports/march-metrics.xlsx"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60002",
+      "eventID": "e1a1b1c1-0002-4001-a001-000000000002",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T09:28:07Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"filterSet": {}},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60003",
+      "eventID": "e1a1b1c1-0003-4001-a001-000000000003",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T10:05:22Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-data", "key": "uploads/q1-report-final.pdf"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60004",
+      "eventID": "e1a1b1c1-0004-4001-a001-000000000004",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T11:33:55Z",
+      "eventSource": "monitoring.amazonaws.com",
+      "eventName": "GetMetricData",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-sdk-python/1.34.0",
+      "requestParameters": {"namespace": "AWS/EC2"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60005",
+      "eventID": "e1a1b1c1-0005-4001-a001-000000000005",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7BOB001",
+        "arn": "arn:aws:iam::123456789012:user/bob.smith",
+        "accountId": "123456789012",
+        "userName": "bob.smith"
+      },
+      "eventTime": "2024-03-15T09:45:18Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.52",
+      "userAgent": "Mozilla/5.0 (compatible; aws-console)",
+      "requestParameters": {"bucketName": "company-logs", "key": "app/2024-03-14.log"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "B1B2C3D4E5F60001",
+      "eventID": "e2a2b2c2-0001-4002-a002-000000000001",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7BOB001",
+        "arn": "arn:aws:iam::123456789012:user/bob.smith",
+        "accountId": "123456789012",
+        "userName": "bob.smith"
+      },
+      "eventTime": "2024-03-15T10:12:44Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.52",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-data", "key": "backups/db-snapshot-20240315.sql.gz"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "B1B2C3D4E5F60002",
+      "eventID": "e2a2b2c2-0002-4002-a002-000000000002",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7BOB001",
+        "arn": "arn:aws:iam::123456789012:user/bob.smith",
+        "accountId": "123456789012",
+        "userName": "bob.smith"
+      },
+      "eventTime": "2024-03-15T13:22:09Z",
+      "eventSource": "monitoring.amazonaws.com",
+      "eventName": "GetMetricData",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.52",
+      "userAgent": "aws-sdk-python/1.34.0",
+      "requestParameters": {"namespace": "AWS/S3"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "B1B2C3D4E5F60003",
+      "eventID": "e2a2b2c2-0003-4002-a002-000000000003",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7SVC001",
+        "arn": "arn:aws:iam::123456789012:user/svc-ci-deploy",
+        "accountId": "123456789012",
+        "userName": "svc-ci-deploy"
+      },
+      "eventTime": "2024-03-15T11:00:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "RunInstances",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "54.240.196.10",
+      "userAgent": "terraform/1.7.0",
+      "requestParameters": {"instanceType": "t3.micro", "imageId": "ami-0c02fb55956c7d316", "minCount": 1, "maxCount": 1},
+      "responseElements": {"instancesSet": {"items": [{"instanceId": "i-0a1b2c3d4e5f6a7b8"}]}},
+      "errorCode": null,
+      "requestID": "C1B2C3D4E5F60001",
+      "eventID": "e3a3b3c3-0001-4003-a003-000000000001",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7SVC001",
+        "arn": "arn:aws:iam::123456789012:user/svc-ci-deploy",
+        "accountId": "123456789012",
+        "userName": "svc-ci-deploy"
+      },
+      "eventTime": "2024-03-15T11:08:33Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "TerminateInstances",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "54.240.196.10",
+      "userAgent": "terraform/1.7.0",
+      "requestParameters": {"instancesSet": {"items": [{"instanceId": "i-0a1b2c3d4e5f6a7b8"}]}},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "C1B2C3D4E5F60002",
+      "eventID": "e3a3b3c3-0002-4003-a003-000000000002",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DAVID1",
+        "arn": "arn:aws:iam::123456789012:user/david.chen",
+        "accountId": "123456789012",
+        "userName": "david.chen"
+      },
+      "eventTime": "2024-03-15T14:05:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.78",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"userName": "david.chen"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "D1B2C3D4E5F60001",
+      "eventID": "e4a4b4c4-0001-4004-a004-000000000001",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DAVID1",
+        "arn": "arn:aws:iam::123456789012:user/david.chen",
+        "accountId": "123456789012",
+        "userName": "david.chen"
+      },
+      "eventTime": "2024-03-15T14:18:27Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "GetTrailStatus",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.78",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"name": "management-events-trail"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "D1B2C3D4E5F60002",
+      "eventID": "e4a4b4c4-0002-4004-a004-000000000002",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7ALICE01",
+        "arn": "arn:aws:iam::123456789012:user/alice.johnson",
+        "accountId": "123456789012",
+        "userName": "alice.johnson"
+      },
+      "eventTime": "2024-03-15T15:45:12Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.44",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-data", "key": "presentations/board-deck-2024.pptx"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "A1B2C3D4E5F60006",
+      "eventID": "e1a1b1c1-0006-4001-a001-000000000006",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7BOB001",
+        "arn": "arn:aws:iam::123456789012:user/bob.smith",
+        "accountId": "123456789012",
+        "userName": "bob.smith"
+      },
+      "eventTime": "2024-03-15T16:30:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.52",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {"bucketName": "company-logs", "key": "app/2024-03-15.log"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "B1B2C3D4E5F60004",
+      "eventID": "e2a2b2c2-0004-4002-a002-000000000004",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DAVID1",
+        "arn": "arn:aws:iam::123456789012:user/david.chen",
+        "accountId": "123456789012",
+        "userName": "david.chen"
+      },
+      "eventTime": "2024-03-15T16:55:41Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRoles",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "72.21.198.78",
+      "userAgent": "aws-cli/2.15.12 Python/3.11.6",
+      "requestParameters": {},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "D1B2C3D4E5F60003",
+      "eventID": "e4a4b4c4-0003-4004-a004-000000000003",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:14:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {},
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied",
+      "requestID": "ATK000000000001",
+      "eventID": "fattk001-0001-4000-a000-000000000001",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:14:12Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetBucketAcl",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-data"},
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied",
+      "requestID": "ATK000000000002",
+      "eventID": "fattk001-0002-4000-a000-000000000002",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:14:23Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetBucketAcl",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-logs"},
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied",
+      "requestID": "ATK000000000003",
+      "eventID": "fattk001-0003-4000-a000-000000000003",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:14:35Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetBucketAcl",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-public-assets"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000004",
+      "eventID": "fattk001-0004-4000-a000-000000000004",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:14:47Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListObjects",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-public-assets"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000005",
+      "eventID": "fattk001-0005-4000-a000-000000000005",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:15:01Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-public-assets", "key": "internal/hr-export-2024.csv"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000006",
+      "eventID": "fattk001-0006-4000-a000-000000000006",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:15:14Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-public-assets", "key": "internal/salary-data-2024.xlsx"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000007",
+      "eventID": "fattk001-0007-4000-a000-000000000007",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AWSAccount",
+        "principalId": "AROAIOSFODNN7ATTK01",
+        "arn": "arn:aws:sts::123456789012:assumed-role/unauthenticated-role/session",
+        "accountId": "123456789012",
+        "userName": "unknown"
+      },
+      "eventTime": "2024-03-15T02:15:28Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {"bucketName": "company-public-assets", "key": "configs/db-config.json"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000008",
+      "eventID": "fattk001-0008-4000-a000-000000000008",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:16:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000009",
+      "eventID": "fattk001-0009-4000-a000-000000000009",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:16:15Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"bucketName": "company-data", "key": "finance/Q4-2023-results.xlsx"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000010",
+      "eventID": "fattk001-0010-4000-a000-000000000010",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:16:30Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"bucketName": "company-data", "key": "hr/employee-records-full.csv"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000011",
+      "eventID": "fattk001-0011-4000-a000-000000000011",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:17:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListUsers",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000012",
+      "eventID": "fattk001-0012-4000-a000-000000000012",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:17:15Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListRoles",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000013",
+      "eventID": "fattk001-0013-4000-a000-000000000013",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:17:30Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"userName": "admin-user"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000014",
+      "eventID": "fattk001-0014-4000-a000-000000000014",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:18:00Z",
+      "eventSource": "sts.amazonaws.com",
+      "eventName": "AssumeRole",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {
+        "roleArn": "arn:aws:iam::123456789012:role/ec2-admin-role",
+        "roleSessionName": "maintenance-session-1710461880"
+      },
+      "responseElements": {
+        "credentials": {
+          "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+          "expiration": "2024-03-15T10:18:00Z"
+        }
+      },
+      "errorCode": null,
+      "requestID": "ATK000000000015",
+      "eventID": "fattk001-0015-4000-a000-000000000015",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAIOSFODNN7DEV001",
+        "arn": "arn:aws:iam::123456789012:user/dev-temp",
+        "accountId": "123456789012",
+        "userName": "dev-temp"
+      },
+      "eventTime": "2024-03-15T02:18:30Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateAccessKey",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"userName": "dev-temp"},
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIAIOSFODNN7PERSIST",
+          "status": "Active",
+          "userName": "dev-temp"
+        }
+      },
+      "errorCode": null,
+      "requestID": "ATK000000000016",
+      "eventID": "fattk001-0016-4000-a000-000000000016",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAIOSFODNN7EC2ADM",
+            "arn": "arn:aws:iam::123456789012:role/ec2-admin-role",
+            "accountId": "123456789012",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:19:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "ap-southeast-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"filterSet": {}},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000017",
+      "eventID": "fattk001-0017-4000-a000-000000000017",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAIOSFODNN7EC2ADM",
+            "arn": "arn:aws:iam::123456789012:role/ec2-admin-role",
+            "accountId": "123456789012",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:20:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "RunInstances",
+      "awsRegion": "ap-southeast-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {
+        "instanceType": "p3.16xlarge",
+        "imageId": "ami-0abcdef1234567890",
+        "minCount": 4,
+        "maxCount": 4,
+        "userData": "IyEvYmluL2Jhc2gKY3VybCAtcyBodHRwOi8vMTg1LjIyMC4xMDEuNDcveG1yaWcuc2ggfCBiYXNo"
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {"instanceId": "i-0deadbeef1111aaaa"},
+            {"instanceId": "i-0deadbeef2222bbbb"},
+            {"instanceId": "i-0deadbeef3333cccc"},
+            {"instanceId": "i-0deadbeef4444dddd"}
+          ]
+        }
+      },
+      "errorCode": null,
+      "requestID": "ATK000000000018",
+      "eventID": "fattk001-0018-4000-a000-000000000018",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAIOSFODNN7EC2ADM",
+            "arn": "arn:aws:iam::123456789012:role/ec2-admin-role",
+            "accountId": "123456789012",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:21:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "CreateSecurityGroup",
+      "awsRegion": "ap-southeast-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {
+        "groupName": "default-maintenance-sg",
+        "groupDescription": "Maintenance group",
+        "vpcId": "vpc-0a1b2c3d4e5f6a7b8"
+      },
+      "responseElements": {"groupId": "sg-0a1b2c3d4e5f6aaaa"},
+      "errorCode": null,
+      "requestID": "ATK000000000019",
+      "eventID": "fattk001-0019-4000-a000-000000000019",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:22:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutBucketPolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {
+        "bucketName": "company-data",
+        "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::company-data/*\"}]}"
+      },
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000020",
+      "eventID": "fattk001-0020-4000-a000-000000000020",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:25:00Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "StopLogging",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"name": "management-events-trail"},
+      "responseElements": null,
+      "errorCode": null,
+      "requestID": "ATK000000000021",
+      "eventID": "fattk001-0021-4000-a000-000000000021",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIOSFODNN7EC2ADM:maintenance-session-1710461880",
+        "arn": "arn:aws:sts::123456789012:assumed-role/ec2-admin-role/maintenance-session-1710461880",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "userName": "ec2-admin-role"
+          }
+        }
+      },
+      "eventTime": "2024-03-15T02:28:00Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "DeleteTrail",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "185.220.101.47",
+      "userAgent": "boto3/1.34.0 Python/3.11.0 Linux/6.1",
+      "requestParameters": {"name": "management-events-trail"},
+      "responseElements": null,
+      "errorCode": "AccessDenied",
+      "errorMessage": "Access Denied",
+      "requestID": "ATK000000000022",
+      "eventID": "fattk001-0022-4000-a000-000000000022",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-04-04T14:11:57.009663+00:00",
+  "log_summary": {
+    "total_events": 37,
+    "time_range": {
+      "start": "2024-03-15 02:14:00+00:00",
+      "end": "2024-03-15 16:55:41+00:00"
+    },
+    "unique_source_ips": 5,
+    "unique_users": 7,
+    "unique_regions": [
+      "us-east-1",
+      "ap-southeast-1"
+    ],
+    "error_events": 4
+  },
+  "detection_summary": {
+    "api_frequency": {
+      "findings": 0,
+      "has_alerts": false
+    },
+    "error_rate": {
+      "findings": 1,
+      "has_alerts": true
+    },
+    "rare_api_calls": {
+      "findings": 0,
+      "has_alerts": false
+    },
+    "after_hours": {
+      "findings": 14,
+      "has_alerts": true
+    },
+    "creation_burst": {
+      "findings": 0,
+      "has_alerts": false
+    },
+    "sensitive_access": {
+      "findings": 5,
+      "has_alerts": true
+    }
+  },
+  "suspect_ips": [
+    {
+      "ip": "185.220.101.47",
+      "risk_score": 3
+    }
+  ],
+  "ip_profiles": {
+    "185.220.101.47": {
+      "ip": "185.220.101.47",
+      "first_seen": "2024-03-15 02:14:00+00:00",
+      "last_seen": "2024-03-15 02:28:00+00:00",
+      "total_events": 22,
+      "unique_users": [
+        "unknown",
+        "dev-temp",
+        "ec2-admin-role"
+      ],
+      "regions": [
+        "ap-southeast-1",
+        "us-east-1"
+      ],
+      "error_rate": 0.182,
+      "mitre_techniques": {
+        "T1580": {
+          "tactic": "Discovery",
+          "technique": "Cloud Infrastructure Discovery",
+          "events": [
+            "ListBuckets",
+            "GetBucketAcl",
+            "ListObjects",
+            "DescribeInstances"
+          ]
+        },
+        "T1530": {
+          "tactic": "Collection",
+          "technique": "Data from Cloud Storage Object",
+          "events": [
+            "GetObject"
+          ]
+        },
+        "T1087.004": {
+          "tactic": "Discovery",
+          "technique": "Account Discovery: Cloud Account",
+          "events": [
+            "ListUsers",
+            "ListRoles",
+            "GetUser"
+          ]
+        },
+        "T1078.004": {
+          "tactic": "Privilege Escalation",
+          "technique": "Valid Accounts: Cloud Accounts",
+          "events": [
+            "AssumeRole"
+          ]
+        },
+        "T1098.001": {
+          "tactic": "Persistence",
+          "technique": "Account Manipulation: Additional Cloud Credentials",
+          "events": [
+            "CreateAccessKey"
+          ]
+        },
+        "T1496": {
+          "tactic": "Impact",
+          "technique": "Resource Hijacking",
+          "events": [
+            "RunInstances",
+            "CreateSecurityGroup"
+          ]
+        },
+        "T1222": {
+          "tactic": "Defense Evasion",
+          "technique": "File and Directory Permissions Modification",
+          "events": [
+            "PutBucketPolicy"
+          ]
+        },
+        "T1562.008": {
+          "tactic": "Defense Evasion",
+          "technique": "Disable Cloud Logs",
+          "events": [
+            "StopLogging",
+            "DeleteTrail"
+          ]
+        }
+      },
+      "timeline": [
+        {
+          "eventTime": "2024-03-15T02:14:00.000Z",
+          "userName": "unknown",
+          "eventName": "ListBuckets",
+          "awsRegion": "us-east-1",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "eventTime": "2024-03-15T02:14:12.000Z",
+          "userName": "unknown",
+          "eventName": "GetBucketAcl",
+          "awsRegion": "us-east-1",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "eventTime": "2024-03-15T02:14:23.000Z",
+          "userName": "unknown",
+          "eventName": "GetBucketAcl",
+          "awsRegion": "us-east-1",
+          "errorCode": "AccessDenied"
+        },
+        {
+          "eventTime": "2024-03-15T02:14:35.000Z",
+          "userName": "unknown",
+          "eventName": "GetBucketAcl",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:14:47.000Z",
+          "userName": "unknown",
+          "eventName": "ListObjects",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:15:01.000Z",
+          "userName": "unknown",
+          "eventName": "GetObject",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:15:14.000Z",
+          "userName": "unknown",
+          "eventName": "GetObject",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:15:28.000Z",
+          "userName": "unknown",
+          "eventName": "GetObject",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:16:00.000Z",
+          "userName": "dev-temp",
+          "eventName": "ListBuckets",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:16:15.000Z",
+          "userName": "dev-temp",
+          "eventName": "GetObject",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:16:30.000Z",
+          "userName": "dev-temp",
+          "eventName": "GetObject",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:17:00.000Z",
+          "userName": "dev-temp",
+          "eventName": "ListUsers",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:17:15.000Z",
+          "userName": "dev-temp",
+          "eventName": "ListRoles",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:17:30.000Z",
+          "userName": "dev-temp",
+          "eventName": "GetUser",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:18:00.000Z",
+          "userName": "dev-temp",
+          "eventName": "AssumeRole",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:18:30.000Z",
+          "userName": "dev-temp",
+          "eventName": "CreateAccessKey",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:19:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "DescribeInstances",
+          "awsRegion": "ap-southeast-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:20:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "RunInstances",
+          "awsRegion": "ap-southeast-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:21:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "CreateSecurityGroup",
+          "awsRegion": "ap-southeast-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:22:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "PutBucketPolicy",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:25:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "StopLogging",
+          "awsRegion": "us-east-1",
+          "errorCode": null
+        },
+        {
+          "eventTime": "2024-03-15T02:28:00.000Z",
+          "userName": "ec2-admin-role",
+          "eventName": "DeleteTrail",
+          "awsRegion": "us-east-1",
+          "errorCode": "AccessDenied"
+        }
+      ]
+    }
+  },
+  "findings": {
+    "error_rate": [
+      {
+        "sourceIPAddress": "185.220.101.47",
+        "total": 22,
+        "error_count": 4.0,
+        "error_rate": 0.1818181818
+      }
+    ],
+    "after_hours": [
+      {
+        "eventTime": "2024-03-15T02:16:00.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "ListBuckets",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:16:15.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "GetObject",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:16:30.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "GetObject",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:17:00.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "ListUsers",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:17:15.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "ListRoles",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:17:30.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "GetUser",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:18:00.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "AssumeRole",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:18:30.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "CreateAccessKey",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:19:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "DescribeInstances",
+        "awsRegion": "ap-southeast-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:20:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "RunInstances",
+        "awsRegion": "ap-southeast-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:21:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "CreateSecurityGroup",
+        "awsRegion": "ap-southeast-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:22:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "PutBucketPolicy",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:25:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "StopLogging",
+        "awsRegion": "us-east-1",
+        "errorCode": null,
+        "hour": 2
+      },
+      {
+        "eventTime": "2024-03-15T02:28:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "DeleteTrail",
+        "awsRegion": "us-east-1",
+        "errorCode": "AccessDenied",
+        "hour": 2
+      }
+    ],
+    "sensitive_access": [
+      {
+        "eventTime": "2024-03-15T02:18:00.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "AssumeRole",
+        "awsRegion": "us-east-1",
+        "errorCode": null
+      },
+      {
+        "eventTime": "2024-03-15T02:18:30.000Z",
+        "userName": "dev-temp",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "CreateAccessKey",
+        "awsRegion": "us-east-1",
+        "errorCode": null
+      },
+      {
+        "eventTime": "2024-03-15T02:22:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "PutBucketPolicy",
+        "awsRegion": "us-east-1",
+        "errorCode": null
+      },
+      {
+        "eventTime": "2024-03-15T02:25:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "StopLogging",
+        "awsRegion": "us-east-1",
+        "errorCode": null
+      },
+      {
+        "eventTime": "2024-03-15T02:28:00.000Z",
+        "userName": "ec2-admin-role",
+        "sourceIPAddress": "185.220.101.47",
+        "eventName": "DeleteTrail",
+        "awsRegion": "us-east-1",
+        "errorCode": "AccessDenied"
+      }
+    ]
+  }
+}

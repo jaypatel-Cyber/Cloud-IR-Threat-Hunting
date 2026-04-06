@@ -1,0 +1,19 @@
+# Project 4: Cloud IR & Threat Hunting
+# Install: pip install -r requirements.txt
+
+# Core data science (anomaly detection)
+pandas>=2.1.0
+numpy>=1.26.0
+
+# AWS SDK (S3 CloudTrail ingestion + LocalStack)
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Interactive analysis
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Optional: IP geolocation enrichment
+# geoip2>=4.7.0
